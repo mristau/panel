@@ -14,6 +14,11 @@ class ContentPage extends Page
 	protected static ?string $slug = 'content/{slug}';
 	protected static bool $shouldRegisterNavigation = false;
 
+    public static function canAccess(): bool
+    {
+        return true;
+    }
+
     public function mount(string $slug): void
     {
         $this->record = ContentPageModel::where('slug', $slug)->where('active', true)->firstOrFail();

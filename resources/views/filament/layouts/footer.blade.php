@@ -11,4 +11,5 @@
             <span>{{ round(microtime(true) - LARAVEL_START, 3) }}s</span>
         </div>
     @endif
+    @livewire(\App\Filament\Widgets\ContentPageWidget::class)
 </footer>
