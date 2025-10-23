@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Filament\App\Pages;
+namespace App\Filament\Pages;
 
-use Filament\Pages\Page;
-use Filament\Pages\PageRoute;
+use Filament\Pages\SimplePage;
+use Illuminate\View\View;
 use App\Models\ContentPage as ContentPageModel;
 
-class ContentPage extends Page
+class ContentPage extends SimplePage
 {
     public ?ContentPageModel $record = null;
 
@@ -14,17 +14,19 @@ class ContentPage extends Page
 	protected static ?string $slug = 'content/{slug}';
 	protected static bool $shouldRegisterNavigation = false;
 
-    public static function canAccess(): bool
-    {
-        return true;
-    }
-
-    public function mount(string $slug): void
+/*     public function mount(string $slug): void
     {
         $this->record = ContentPageModel::where('slug', $slug)->where('active', true)->firstOrFail();
 
         // maybe later add seo
         // view()->share('metaTitle', $this->record->title);
+    } */
+
+    public function show(string $slug): View
+    {
+        $page = ContentPageModel::where('slug', $slug)->where('active', true)->firstOrFail();
+
+        return view('filament.pages.content-page', compact('page'));
     }
 
     public function getTitle(): string

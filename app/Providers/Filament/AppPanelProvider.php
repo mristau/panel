@@ -25,7 +25,6 @@ class AppPanelProvider extends PanelProvider
                     ->visible(fn () => user()?->canAccessPanel(Filament::getPanel('admin'))),
             ])
             ->discoverResources(in: app_path('Filament/App/Resources'), for: 'App\\Filament\\App\\Resources')
-            ->discoverPages(in: app_path('Filament/App/Pages'), for: 'App\\Filament\\App\\Pages')
             ->plugins([
                 FilamentLogViewer::make()
                     ->authorize(false),
