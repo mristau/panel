@@ -1,9 +1,8 @@
 <?php
 
 return [
-    'title' => 'Content Pages',
-    'empty' => 'No Content Pages',
     'nav_title' => 'Content Pages',
+    'empty' => 'No Content Pages',
     'model_label' => 'Content Page',
     'model_label_plural' => 'Content Pages',
     'table' => [

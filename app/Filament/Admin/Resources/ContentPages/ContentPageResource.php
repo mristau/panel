@@ -22,7 +22,7 @@ class ContentPageResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = 'tabler-file-description';
 
-    protected static ?string $recordTitleAttribute = 'foo';
+    protected static ?string $recordTitleAttribute = 'title';
 
     public static function getNavigationLabel(): string
     {
@@ -43,7 +43,6 @@ class ContentPageResource extends Resource
     {
         return trans('admin/dashboard.advanced');
     }
-
 
     public static function form(Schema $schema): Schema
     {
