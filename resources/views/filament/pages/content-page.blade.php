@@ -1,7 +1,7 @@
-<x-filament-panels::page.simple class="fi-content-page">
+<x-filament-panels::page class="fi-content-page">
     <div class="container mx-auto py-8">
         <div class="prose max-w-none">
-        {!! str($page->content)->markdown()->sanitizeHtml() !!}
+        {!! str($this->record->content)->markdown()->sanitizeHtml() !!}
         </div>
     </div>
-</x-filament-panels::page.simple>
+</x-filament-panels::page>
